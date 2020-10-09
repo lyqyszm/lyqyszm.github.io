@@ -1212,7 +1212,6 @@ $(function () {
     <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
     <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
-    <script src="https://apip.weatherdt.com/simple/static/js/weather-simple-common.js?v=2.0"></script>
 
     <!-- Baidu Analytics -->
 
@@ -1239,8 +1238,8 @@ $(function () {
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
-    <div id="weather-v2-plugin-simple"></div>
     
+        <div id="weather-v2-plugin-simple" style="position: absolute; padding: 0px;"></div>
         <script>
         WIDGET = {
         CONFIG: {
@@ -1266,6 +1265,7 @@ $(function () {
         }
         }
         </script>
+        <script src="https://apip.weatherdt.com/simple/static/js/weather-simple-common.js?v=2.0"></script>
     
         
 
@@ -1280,13 +1280,6 @@ $(function () {
     
 
     <!-- 背景雪花飘落特效 洪卫 shw2018 add 2019.09.10 -->
-    
-        <script type="text/javascript">
-            var windowWidth = $(window).width();
-            if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="/js/xuehuapiaoluo.js"><\/script>');
-            }
-        </script>
     
 
     
