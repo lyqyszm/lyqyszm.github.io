@@ -33,6 +33,12 @@
     }
 }
 
+@media only screen and (max-width: 1050px) {
+    #weather-v2-plugin-simple{
+        display:none;
+    }
+}
+
 body {
     background-color: #eaeaea;
     margin: 0;
