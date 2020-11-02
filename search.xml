@@ -4,6 +4,63 @@
   
     
     <entry>
+      <title>Http/Https协议</title>
+      <link href="2020/10/21/Http%E5%B8%B8%E8%A7%81%E7%9F%A5%E8%AF%862/"/>
+      <url>2020/10/21/Http%E5%B8%B8%E8%A7%81%E7%9F%A5%E8%AF%862/</url>
+      
+        <content type="html"><![CDATA[<h2 id="http和https"><a href="#http和https" class="headerlink" title="http和https"></a>http和https</h2><ul><li>(1)http和https的基本概念</li></ul><p>http: 超文本传输协议，是互联网上应用最为广泛的一种网络协议，是一个客户端和服务器端请求和应答的标准（TCP），用于从WWW服务器传输超文本到本地浏览器的传输协议，它可以使浏览器更加高效，使网络传输减少。</p><p>https: 是以安全为目标的HTTP通道，简单讲是HTTP的安全版，即HTTP下加入SSL层，HTTPS的安全基础是SSL，因此加密的详细内容就需要SSL。</p><p>https协议的主要作用是：建立一个信息安全通道，来确保数组的传输，确保网站的真实性。</p><ul><li>(2)http和https的区别？</li></ul><p>http传输的数据都是未加密的，也就是明文的，网景公司设置了SSL协议来对http协议传输的数据进行加密处理，简单来说https协议是由http和ssl协议构建的可进行加密传输和身份认证的网络协议，比http协议的安全性更高。<br>主要的区别如下：</p><p>Https协议需要ca证书，费用较高。</p><p>http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议。</p><p>使用不同的链接方式，端口也不同，一般而言，http协议的端口为80，https的端口为443</p><p>http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。（https的SSL加密是在传输层实现的。<br>）</p><ul><li>(3)https协议的工作原理</li></ul><p>客户端在使用HTTPS方式与Web服务器通信时有以下几个步骤，如图所示。</p><p>客户使用https url访问服务器，则要求web 服务器建立ssl链接。</p><p>web服务器接收到客户端的请求之后，会将网站的证书（证书中包含了公钥），返回或者说传输给客户端。</p><p>客户端和web服务器端开始协商SSL链接的安全等级，也就是加密等级。</p><p>客户端浏览器通过双方协商一致的安全等级，建立会话密钥，然后通过网站的公钥来加密会话密钥，并传送给网站。</p><p>web服务器通过自己的私钥解密出会话密钥。</p><p>web服务器通过会话密钥加密与客户端之间的通信。</p><ul><li>(4)https协议的优点</li></ul><p>使用HTTPS协议可认证用户和服务器，确保数据发送到正确的客户机和服务器；</p><p>HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，要比http协议安全，可防止数据在传输过程中不被窃取、改变，确保数据的完整性。</p><p>HTTPS是现行架构下最安全的解决方案，虽然不是绝对安全，但它大幅增加了中间人攻击的成本。</p><p>谷歌曾在2014年8月份调整搜索引擎算法，并称“比起同等HTTP网站，采用HTTPS加密的网站在搜索结果中的排名将会更高”。</p><ul><li>(5)https协议的缺点</li></ul><p>https握手阶段比较费时，会使页面加载时间延长50%，增加10%~20%的耗电。</p><p>https缓存不如http高效，会增加数据开销。</p><p>SSL证书也需要钱，功能越强大的证书费用越高。</p><p>SSL证书需要绑定IP，不能再同一个ip上绑定多个域名，ipv4资源支持不了这种消耗。</p><h2 id="TCP和UDP的区别"><a href="#TCP和UDP的区别" class="headerlink" title="TCP和UDP的区别"></a>TCP和UDP的区别</h2><p>（1）TCP是面向连接的，udp是无连接的即发送数据前不需要先建立链接。<br>（2）TCP提供可靠的服务。也就是说，通过TCP连接传送的数据，无差错，不丢失，不重复，且按序到达;UDP尽最大努力交付，即不保证可靠交付。 并且因为tcp可靠，面向连接，不会丢失数据因此适合大数据量的交换。</p><p>（3）TCP是面向字节流，UDP面向报文，并且网络出现拥塞不会使得发送速率降低（因此会出现丢包，对实时的应用比如IP电话和视频会议等）。</p><p>（4）TCP只能是1对1的，UDP支持1对1,1对多。</p><p>（5）TCP的首部较大为20字节，而UDP只有8字节。</p><p>（6）TCP是面向连接的可靠性传输，而UDP是不可靠的。</p><h2 id="TCP三次握手-简述"><a href="#TCP三次握手-简述" class="headerlink" title="TCP三次握手 简述"></a>TCP三次握手 简述</h2><p>第一次握手：客户端发送网络包，服务端收到了。<br>这样服务端就能得出结论：客户端的发送能力、服务端的接收能力是正常的。<br>第二次握手：服务端发包，客户端收到了。<br>这样客户端就能得出结论：服务端的接收、发送能力，客户端的接收、发送能力是正常的。不过此时服务器并不能确认客户端的接收能力是否正常。<br>第三次握手：客户端发包，服务端收到了。<br>这样服务端就能得出结论：客户端的接收、发送能力正常，服务器自己的发送、接收能力也正常。</p><h2 id="WebSocket的实现和应用"><a href="#WebSocket的实现和应用" class="headerlink" title="WebSocket的实现和应用"></a>WebSocket的实现和应用</h2><p>(1)什么是WebSocket?<br>WebSocket是HTML5中的协议，支持持久连续，http协议不支持持久性连接。Http1.0和HTTP1.1都不支持持久性的链接，HTTP1.1中的keep-alive，将多个http请求合并为1个</p><p>(2)WebSocket是什么样的协议，具体有什么优点？</p><p>HTTP的生命周期通过Request来界定，也就是Request一个Response，那么在Http1.0协议中，这次Http请求就结束了。在Http1.1中进行了改进，是的有一个connection：Keep-alive，也就是说，在一个Http连接中，可以发送多个Request，接收多个Response。但是必须记住，在Http中一个Request只能对应有一个Response，而且这个Response是被动的，不能主动发起。</p><p>WebSocket是基于Http协议的，或者说借用了Http协议来完成一部分握手，在握手阶段与Http是相同的。我们来看一个websocket握手协议的实现，基本是2个属性，upgrade，connection。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> http </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Http常见知识</title>
+      <link href="2020/10/19/Http%E5%B8%B8%E8%A7%81%E7%9F%A5%E8%AF%861/"/>
+      <url>2020/10/19/Http%E5%B8%B8%E8%A7%81%E7%9F%A5%E8%AF%861/</url>
+      
+        <content type="html"><![CDATA[<h2 id="cookie-sessionStorage-localStorage区别"><a href="#cookie-sessionStorage-localStorage区别" class="headerlink" title="cookie sessionStorage localStorage区别"></a>cookie sessionStorage localStorage区别</h2><p>Cookie和session都可用来存储用户信息，cookie存放于客户端，session存放于服务器端，因为cookie存放于客户端有可能被窃取，所以cookie一般用来存放不敏感的信息，比如用户设置的网站主题，敏感的信息用session存储，比如用户的登陆信息，session可以存放于文件，数据库，内存中都可以，cookie可以服务器端响应的时候设置，也可以客户端通过JS设置cookie会在请求时在http首部发送给客户端，cookie一般在客户端有大小限制，一般为4K，<br>下面从几个方向区分一下cookie，localstorage，sessionstorage的区别</p><ul><li>1、生命周期：</li></ul><p>Cookie：可设置失效时间，否则默认为关闭浏览器后失效</p><p>Localstorage:除非被手动清除，否则永久保存</p><p>Sessionstorage：仅在当前网页会话下有效，关闭页面或浏览器后就会被清除</p><ul><li>2、存放数据：</li></ul><p>Cookie：4k左右</p><p>Localstorage和sessionstorage：可以保存5M的信息</p><ul><li>3、http请求：</li></ul><p>Cookie：每次都会携带在http头中，如果使用cookie保存过多数据会带来性能问题</p><p>其他两个：仅在客户端即浏览器中保存，不参与和服务器的通信</p><ul><li>4、易用性：</li></ul><p>Cookie：需要程序员自己封装，原生的cookie接口不友好</p><p>其他两个：即可采用原生接口，亦可再次封装</p><ul><li>5、应用场景：</li></ul><p>从安全性来说，因为每次http请求都回携带cookie信息，这样子浪费了带宽，所以cookie应该尽可能的少用，此外cookie还需要指定作用域，不可以跨域调用，限制很多，但是用户识别用户登陆来说，cookie还是比storage好用，其他情况下可以用storage，localstorage可以用来在页面传递参数，sessionstorage可以用来保存一些临时的数据，防止用户刷新页面后丢失了一些参数。</p><h2 id="强缓存、协商缓存"><a href="#强缓存、协商缓存" class="headerlink" title="强缓存、协商缓存"></a>强缓存、协商缓存</h2><table><thead><tr><th align="center"></th><th align="center">获取资源形式</th><th align="center">状态码</th><th align="center">发送请求到服务器</th></tr></thead><tbody><tr><td align="center">强缓存</td><td align="center">从缓存取</td><td align="center">200（from cache）</td><td align="center">否，直接从缓存取</td></tr><tr><td align="center">协商缓存</td><td align="center">从缓存取</td><td align="center">304（not modified）</td><td align="center">是，通过服务器来告知缓存是否可用</td></tr></tbody></table><p>强缓存相关字段有expires，cache-control。如果cache-control与expires同时存在的话，cache-control的优先级高于expires。</p><p>协商缓存相关字段有Last-Modified/If-Modified-Since，Etag/If-None-Match</p><p><img src="https://uploadfiles.nowcoder.com/images/20190312/311436_1552361773903_9DC69E327B4B3691E94CD9D52D10E2C1" alt="缓存图解"></p><h2 id="GET和POST的区别"><a href="#GET和POST的区别" class="headerlink" title="GET和POST的区别"></a>GET和POST的区别</h2><p>get参数通过url传递，post放在request body中。</p><p>get请求在url中传递的参数是有长度限制的，而post没有。</p><p>get比post更不安全，因为参数直接暴露在url中，所以不能用来传递敏感信息。</p><p>get请求只能进行url编码，而post支持多种编码方式</p><p>get请求会浏览器主动cache，而post支持多种编码方式。</p><p>get请求参数会被完整保留在浏览历史记录里，而post中的参数不会被保留。</p><p>GET和POST本质上就是TCP链接，并无差别。但是由于HTTP的规定和浏览器/服务器的限制，导致他们在应用过程中体现出一些不同。</p><p>GET产生一个TCP数据包；POST产生两个TCP数据包。</p><h1 id="web性能优化"><a href="#web性能优化" class="headerlink" title="web性能优化"></a>web性能优化</h1><p>降低请求量：合并资源，减少HTTP 请求数，minify / gzip 压缩，webP，lazyLoad。</p><p>加快请求速度：预解析DNS，减少域名数，并行加载，CDN 分发。</p><p>缓存：HTTP 协议缓存请求，离线缓存 manifest，离线数据缓存localStorage。</p><p>渲染：JS/CSS优化，加载顺序，服务端渲染，pipeline。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> http </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Http状态码</title>
+      <link href="2020/10/18/Http%E7%8A%B6%E6%80%81%E7%A0%81/"/>
+      <url>2020/10/18/Http%E7%8A%B6%E6%80%81%E7%A0%81/</url>
+      
+        <content type="html"><![CDATA[<h2 id="状态码分类"><a href="#状态码分类" class="headerlink" title="状态码分类"></a>状态码分类</h2><ul><li>1** 信息，服务器收到请求，需要请求者继续执行操作</li><li>2** 成功，操作被成功接收并处理</li><li>3** 重定向，需要进—步的操作以完成请求</li><li>4** 客户端错误,请求包含语法错误或无法完成请求</li><li>5** 服务器错误，服务器在处理请求的过程中发生了错误  </li></ul><h2 id="状态码大全"><a href="#状态码大全" class="headerlink" title="状态码大全"></a>状态码大全</h2><p>100 （部分接受） 客户端应当继续发送请求。这个临时响应是用来通知客户端它的部分请求已经被服务器接收，且仍未被拒绝。<br>101 （已了解） 服务器已经理解了客户端的请求，并将通过Upgrade 消息头通知客户端采用不同的协议来完成这个请求。<br>102 （已接收） 由WebDAV（RFC 2518）扩展的状态码，代表处理将被继续执行。<br>200    OK    请求成功。一般用于GET与POST请求<br>201    Created    已创建。成功请求并创建了新的资源</p><p>202    Accepted    已接受。已经接受请求，但未处理完成</p><p>203    Non-Authoritative Information    非授权信息。请求成功。但返回的meta信息不在原始的服务器，而是一个副本</p><p>204    No Content    无内容。服务器成功处理，但未返回内容。在未更新网页的情况下，可确保浏览器继续显示当前文档</p><p>205    Reset Content    重置内容。服务器处理成功，用户终端（例如：浏览器）应重置文档视图。可通过此返回码清除浏览器的表单域</p><p>206    Partial Content    部分内容。服务器成功处理了部分GET请求</p><p>300    Multiple Choices    多种选择。请求的资源可包括多个位置，相应可返回一个资源特征与地址的列表用于用户终端（例如：浏览器）选择</p><p>301    Moved Permanently    永久移动。请求的资源已被永久的移动到新URI，返回信息会包括新的URI，浏览器会自动定向到新URI。今后任何新的请求都应使用新的URI代替</p><p>302    Found    临时移动。与301类似。但资源只是临时被移动。客户端应继续使用原有URI</p><p>303    See Other    查看其它地址。与301类似。使用GET和POST请求查看</p><p>304    Not Modified    未修改。所请求的资源未修改，服务器返回此状态码时，不会返回任何资源。客户端通常会缓存访问过的资源，通过提供一个头信息指出客户端希望只返回在指定日期之后修改的资源</p><p>305    Use Proxy    使用代理。所请求的资源必须通过代理访问</p><p>306    Unused    已经被废弃的HTTP状态码</p><p>307    Temporary Redirect    临时重定向。与302类似。使用GET请求重定向</p><p>400    Bad Request    客户端请求的语法错误，服务器无法理解</p><p>401    Unauthorized    请求要求用户的身份认证</p><p>402    Payment Required    保留，将来使用</p><p>403    Forbidden    服务器理解请求客户端的请求，但是拒绝执行此请求</p><p>404    Not Found    服务器无法根据客户端的请求找到资源（网页）。通过此代码，网站设计人员可设置”您所请求的资源无法找到”的个性页面</p><p>500    Internal Server Error    服务器内部错误，无法完成请求</p><p>501    Not Implemented    服务器不支持请求的功能，无法完成请求</p><p>502    Bad Gateway    作为网关或者代理工作的服务器尝试执行请求时，从远程服务器接收到了一个无效的响应</p><p>503    Service Unavailable    由于超载或系统维护，服务器暂时的无法处理客户端的请求。延时的长度可包含在服务器的Retry-After头信息中</p><p>504    Gateway Time-out    充当网关或代理的服务器，未及时从远端服务器获取请求</p><p>505    HTTP Version not supported    服务器不支持请求的HTTP协议的版本，无法完成处理</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> http </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JavaScript</title>
       <link href="2020/10/06/JavaScript/"/>
       <url>2020/10/06/JavaScript/</url>
@@ -11,6 +68,12 @@
         <content type="html"><![CDATA[<p>常见问题. </p><h2 id="语言特性"><a href="#语言特性" class="headerlink" title="语言特性"></a>语言特性</h2><p>运行在客户端浏览器上；<br>不用预编译，直接解析执行代码；<br>是弱类型语言，较为灵活；<br>与操作系统无关，跨平台的语言；<br>脚本语言、解释性语言。</p><h2 id="javascript数据类型"><a href="#javascript数据类型" class="headerlink" title="javascript数据类型"></a>javascript数据类型</h2><h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><p>string、number、null、undefined、boolean、symbol(ES6新增) 变量值存放在栈内存中，可直接访问和修改变量的值<br>基本数据类型不存在拷贝，好比如说你无法修改数值1的值</p><h3 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h3><p>Object Function RegExp Math Date 值为对象，存放在堆内存中<br>在栈内存中变量保存的是一个指针，指向对应在堆内存中的地址。<br>当访问引用类型的时候，要先从栈中取出该对象的地址指针，然后再从堆内存中取得所需的数据</p><h3 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h3><p>为什么备份的数组对象也会发生变化，这里就涉及到你用的‘备份’其实是一种浅拷贝</p><h4 id="简单的引用拷贝"><a href="#简单的引用拷贝" class="headerlink" title="简单的引用拷贝"></a>简单的引用拷贝</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; [1,2,3,4];</span><br><span class="line">var b &#x3D; a;</span><br><span class="line">a[0] &#x3D; 0;</span><br><span class="line">console.log(a,b); &#x2F;&#x2F;(0,2,3,4) (0,2,3,4) </span><br></pre></td></tr></table></figure><p>Array.prototype.slice 和 Array.prototype.concat 看似深拷贝，其实质上还是浅拷贝<br>当数组a中包含对象时， Array.prototype.slice 和 Array.prototype.cancat 拷贝出来数组中的对象还是共享同一内存地址，所以本质上归属浅拷贝<br>Object.assign 原理也是一样的（对于对象的属性都为基本类型可以当成深拷贝）  </p><h3 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h3><p>深拷贝是可以完美的解决浅拷贝的弊端，重新开辟一块地址，深拷贝出来的属性的基本类型值都是相同的。</p><h4 id="JSON内置对象深拷贝"><a href="#JSON内置对象深拷贝" class="headerlink" title="JSON内置对象深拷贝"></a>JSON内置对象深拷贝</h4><p>JSON 对象是ES5中引入的新的类型（支持的浏览器为IE8+），JSON对象parse方法可以将JSON字符串反序列化成JS对象，stringify方法可以将JS对象序列化成JSON字符串，借助这两个方法，也可以实现对象的深拷贝</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; &#123;age:1,name:&#39;ccy&#39;,info:&#123;address:&#39;wuhan&#39;,interest:&#39;playCards&#39;&#125;&#125;;</span><br><span class="line">var b &#x3D; JSON.parse(JSON.stringify(a));</span><br><span class="line">a.info.address &#x3D; &#39;shenzhen&#39;;</span><br><span class="line">console.log(a.info,b.info);</span><br></pre></td></tr></table></figure><h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h3 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h3><p>闭包是指那些能够访问自由变量的函数，自由变量是指在函数中使用的，但既不是函数参数又不是函数的局部变量的变量，由此可以看出，闭包=函数+函数能够访问的自由变量，所以从技术的角度讲，所有JS函数都是闭包，但是这是理论上的闭包，还有一个实践角度上的闭包，从实践角度上来说，只有满足1、即使创建它的上下文已经销毁，它仍然存在，2、在代码中引入了自由变量，才称为闭包</p><h3 id="闭包的应用："><a href="#闭包的应用：" class="headerlink" title="闭包的应用："></a>闭包的应用：</h3><p>1、模仿块级作用域。2、保存外部函数的变量。3、封装私有变量</p><h3 id="为什么要用："><a href="#为什么要用：" class="headerlink" title="为什么要用："></a>为什么要用：</h3><p>匿名自执行函数：我们知道所有的变量，如果不加上var关键字，则默认的会添加到全局对象的属性上去，这样的临时变量加入全局对象有很多坏处，比如：别的函数可能误用这些变量；造成全局对象过于庞大，影响访问速度(因为变量的取值是需要从原型链上遍历的)。除了每次使用变量都是用var关键字外，我们在实际情况下经常遇到这样一种情况，即有的函数只需要执行一次，其内部变量无需维护，可以用闭包。<br>结果缓存：我们开发中会碰到很多情况，设想我们有一个处理过程很耗时的函数对象，每次调用都会花费很长时间，那么我们就需要将计算出来的值存储起来，当调用这个函数的时候，首先在缓存中查找，如果找不到，则进行计算，然后更新缓存并返回值，如果找到了，直接返回查找到的值即可。闭包正是可以做到这一点，因为它不会释放外部的引用，从而函数内部的值可以得以保留。</p><h3 id="闭包的特点："><a href="#闭包的特点：" class="headerlink" title="闭包的特点："></a>闭包的特点：</h3><p>1.让外部访问函数内部变量成为可能<br>2.局部变量会常驻内存中<br>3.可以避免使用全局变量，防止全局变量污染<br>4.会造成内存泄露（有一块内存被长期占用，得不到释放）</p><h3 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function outerFn()&#123;</span><br><span class="line">    var i &#x3D; 0; </span><br><span class="line">    function innerFn()&#123;</span><br><span class="line">    i++;</span><br><span class="line">    console.log(i);</span><br><span class="line">&#125;</span><br><span class="line">    return innerFn;</span><br><span class="line">&#125;</span><br><span class="line">var inner &#x3D; outerFn();  &#x2F;&#x2F;每次外部函数执行的时候，外部函数的地址不同，都会重新创建一个新的地址</span><br><span class="line">inner();</span><br><span class="line">inner();</span><br><span class="line">inner();</span><br><span class="line">var inner2 &#x3D; outerFn();</span><br><span class="line">inner2();</span><br><span class="line">inner2();</span><br><span class="line">inner2();   &#x2F;&#x2F;1 2 3 1 2 3  innerFn函数常驻内存，并且outerFn的变量也没有被销毁，可以被外部访问</span><br></pre></td></tr></table></figure>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> JS </tag>
+            
+        </tags>
       
     </entry>
     
