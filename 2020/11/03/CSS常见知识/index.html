@@ -400,14 +400,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    7 分
                 </div>
                 
 
@@ -480,6 +480,55 @@ Fixed定位使元素的位置与文档流无关，因此不占据空间。<br>Fi
 <li>absolute<br>绝对定位的元素的位置相对于最近的已定位父元素，如果元素没有已定位的父元素，那么它的位置相对于<html>;<br>absolute 定位使元素的位置与文档流无关，因此不占据空间。<br>absolute 定位的元素和其他元素重叠。</li>
 <li>sticky<br>sticky 英文字面意思是粘，粘贴，所以可以把它称之为粘性定位。<br>position: sticky; 基于用户的滚动位置来定位。<br>粘性定位的元素是依赖于用户的滚动，在 position:relative 与 position:fixed 定位之间切换。<br>它的行为就像 position:relative; 而当页面滚动超出目标区域时，它的表现就像 position:fixed;，它会固定在目标位置。<br>元素定位表现为在跨越特定阈值前为相对定位，之后为固定定位。<br>这个特定阈值指的是 top, right, bottom 或 left 之一，换言之，指定 top, right, bottom 或 left 四个阈值其中之一，才可使粘性定位生效。否则其行为与相对定位相同。</li>
 </ul>
+<h2 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h2><p>采用 Flex 布局的元素，称为 Flex 容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称”项目”。<br>容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。<br>项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。</p>
+<h3 id="容器的属性"><a href="#容器的属性" class="headerlink" title="容器的属性"></a>容器的属性</h3><ul>
+<li>flex-direction<br>  flex-direction属性决定主轴的方向（即项目的排列方向）。<ul>
+<li>row（默认值）：主轴为水平方向，起点在左端。</li>
+<li>row-reverse：主轴为水平方向，起点在右端。</li>
+<li>column：主轴为垂直方向，起点在上沿。</li>
+<li>column-reverse：主轴为垂直方向，起点在下沿。</li>
+</ul>
+</li>
+<li>flex-wrap<br>  flex-wrap属性定义，如果一条轴线排不下，如何换行。<ul>
+<li>nowrap（默认）：不换行。</li>
+<li>wrap：换行，第一行在上方。</li>
+<li>wrap-reverse：换行，第一行在下方。</li>
+</ul>
+</li>
+<li>flex-flow<br>  flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap</li>
+<li>justify-content<br>  justify-content属性定义了项目在主轴上的对齐方式。<ul>
+<li>flex-start（默认值）：左对齐</li>
+<li>flex-end：右对齐</li>
+<li>center： 居中</li>
+<li>space-between：两端对齐，项目之间的间隔都相等。</li>
+<li>space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。</li>
+</ul>
+</li>
+<li>align-items<br>  align-items属性定义项目在交叉轴上如何对齐。<ul>
+<li>flex-start：交叉轴的起点对齐。</li>
+<li>flex-end：交叉轴的终点对齐。</li>
+<li>center：交叉轴的中点对齐。</li>
+<li>baseline: 项目的第一行文字的基线对齐。</li>
+<li>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</li>
+</ul>
+</li>
+<li>align-content<br>  align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用<ul>
+<li>flex-start：与交叉轴的起点对齐。</li>
+<li>flex-end：与交叉轴的终点对齐。</li>
+<li>center：与交叉轴的中点对齐。</li>
+<li>space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。</li>
+<li>space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。</li>
+<li>stretch（默认值）：轴线占满整个交叉轴。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071012.png" alt="align-content布局"><h3 id="项目的属性（容器内的组件）"><a href="#项目的属性（容器内的组件）" class="headerlink" title="项目的属性（容器内的组件）"></a>项目的属性（容器内的组件）</h3></li>
+</ul>
+</li>
+<li>order<br>  order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。</li>
+<li>flex-grow<br>  flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大</li>
+<li>flex-shrink<br>  flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。</li>
+<li>flex-basis<br>  flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。</li>
+<li>flex（常用）<br>  flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。</li>
+<li>align-self<br>  align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。</li>
+</ul>
+<p>“参考阮一峰”</p>
 
             </div>
             <hr/>
