@@ -305,7 +305,7 @@
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/">5</a></span>
+    <span class="count"><a href="/">6</a></span>
     <span class="name">文章</span>
 </div>
 
@@ -314,7 +314,7 @@
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">3</a></span>
+    <span class="count"><a href="/tags">4</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -330,7 +330,7 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/">5</a></span>
+    <span class="count"><a href="/">6</a></span>
     <span class="name">文章</span>
 </div>
 
@@ -339,7 +339,7 @@
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">3</a></span>
+    <span class="count"><a href="/tags">4</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -475,7 +475,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,0,4,1],
+                data: [0,0,0,0,0,0,0,0,0,0,0,4,2],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -541,7 +541,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["http","JS","css"]
+                data: ["http","JS","css","vue"]
             }
         ],
         yAxis: [
@@ -554,7 +554,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [3,1,1],
+                data: [3,1,1,1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -686,6 +686,12 @@
             
             <a href="/tags/css/">
                 <span class="chip center-align waves-effect waves-light chip-default">css</span>
+            </a>
+            
+            
+            
+            <a href="/tags/vue/">
+                <span class="chip center-align waves-effect waves-light chip-default">vue</span>
             </a>
             
             
@@ -942,14 +948,6 @@ $(function () {
     
     
         
-    
-        <script type="text/javascript">
-        //只在桌面版网页启用特效
-        var windowWidth = $(window).width();
-        if (windowWidth > 768) {
-            document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
-        }
-        </script>
     
 
     <!-- 背景雪花飘落特效 洪卫 shw2018 add 2019.09.10 -->

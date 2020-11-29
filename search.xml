@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>vue.config.js解决跨域问题</title>
+      <link href="2020/11/08/vue.config.js%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/"/>
+      <url>2020/11/08/vue.config.js%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<h2 id="跨域问题"><a href="#跨域问题" class="headerlink" title="跨域问题"></a>跨域问题</h2><p>由于请求ajax请求资源不同源，故涉及跨域问题，<br>用的人家的接口，后台未设置CORS，<br>VUE项目可直接在vue.config.js里配置跨域，使用http-proxy-middleware插件<br>而vue脚手架3，4都没生成，的自己创建。<br>注意配置多个跨域，不能以api/api2设定,可以以api1/api2，（子串），后面不会生效</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">devServer: &#123; </span><br><span class="line">    proxy: &#123; <span class="comment">//配置多个跨域</span></span><br><span class="line">      <span class="string">&quot;/api&quot;</span>: &#123;</span><br><span class="line">          target: <span class="string">&quot;http://c.m.163.com/nc/article/headline&quot;</span>,  <span class="comment">//将要跨域请求资源的url</span></span><br><span class="line">          changeOrigin: <span class="literal">true</span>,    <span class="comment">//允许跨域</span></span><br><span class="line">          ws: <span class="literal">true</span>,  <span class="comment">//websocket支持</span></span><br><span class="line">          secure: <span class="literal">false</span>,</span><br><span class="line">          pathRewrite: &#123;</span><br><span class="line">            <span class="string">&quot;^/api&quot;</span>: <span class="string">&quot;/&quot;</span>   <span class="comment">//将ajax请求的url开头的/api替换成&#x27;/&#x27;</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">      <span class="string">&quot;/apz&quot;</span>: &#123;</span><br><span class="line">          target: <span class="string">&quot;https://3g.163.com&quot;</span>,</span><br><span class="line">          changeOrigin: <span class="literal">true</span>,</span><br><span class="line">          ws: <span class="literal">true</span>,</span><br><span class="line">          secure: <span class="literal">false</span>,</span><br><span class="line">          pathRewrite: &#123;</span><br><span class="line">            <span class="string">&quot;^/apz&quot;</span>: <span class="string">&quot;/&quot;</span></span><br><span class="line">          &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CSS常见知识</title>
       <link href="2020/11/03/CSS%E5%B8%B8%E8%A7%81%E7%9F%A5%E8%AF%86/"/>
       <url>2020/11/03/CSS%E5%B8%B8%E8%A7%81%E7%9F%A5%E8%AF%86/</url>
